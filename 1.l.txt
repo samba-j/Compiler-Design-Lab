@@ -1,9 +1,13 @@
-/* 1. Identification of Vowels and Consonants */
 %option noyywrap
+%{
+  #include "1.tab.h"
+%}
+
 %%
-[aeiouAEIOU]    printf("%s is vowel\n",yytext); 
-[a-zA-Z]	printf("%s is consonant\n",yytext);
-.		printf("%s is invalid lexeme\n",yytext);
+[0-9]+ {yylval=atoi(yytext);
+	return NUMBER;
+	}
+[\t]	;
+\n	return 0;
+.	return yytext[0];
 %%
-main()
-{ yylex(); }

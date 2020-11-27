@@ -1,14 +1,13 @@
-/* 2. Count the number of Lines in given input */
 %option noyywrap
 %{
-  int num_lines=0;
+  #include "1.tab.h"
 %}
+
 %%
-\n	++num_lines;
-.
+[0-9]+ {yylval=atoi(yytext);
+	return NUMBER;
+	}
+[\t]	;
+\n	return 0;
+.	return yytext[0];
 %%
-main()
-{
-  yylex();
-  printf("no. of lines=%d",num_lines);
-}
