@@ -1,2 +1,2 @@
 # Compiler-Design-Lab
-This lab belongs to AP18110010676.
+This lab belongs to SAMBA (AP18110010676).
