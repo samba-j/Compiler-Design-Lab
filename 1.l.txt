@@ -1,3 +1,8 @@
+/* 1. 
+E -> E+T |T
+T-> T*F | F
+F -> (E) | d
+*/
 %option noyywrap
 %{
   #include "1.tab.h"
